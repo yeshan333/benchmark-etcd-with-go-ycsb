@@ -38,6 +38,12 @@ jobs:
       - name: Peek etcd keys
         run: |
           docker exec ycsb-etcd etcdctl get --prefix ""
+          # base64 encode data
+          docker exec ycsb-etcd etcdctl --write-out="json" get --prefix ""
+          # docker exec ycsb-etcd etcdctl snapshot save my.db
+          # docker exec ycsb-etcd etcdutl --write-out=table snapshot status my.db
+          docker exec ycsb-etcd etcdctl endpoint status --write-out="table"
+
 
       - name: Running test
         run: |
