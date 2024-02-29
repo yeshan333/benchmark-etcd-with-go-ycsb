@@ -5,7 +5,7 @@
 recordcount=1
 
 # benchmark 总共的操作次数
-operationcount=10000
+operationcount=20000
 workload=core
 
 ; threadcount=1
