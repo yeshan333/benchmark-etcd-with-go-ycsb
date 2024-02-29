@@ -37,7 +37,7 @@ jobs:
 
       - name: Peek etcd keys
         run: |
-          etcdctl get --prefix ""
+          docker exec ycsb-etcd etcdctl get --prefix ""
 
       - name: Running test
         run: |

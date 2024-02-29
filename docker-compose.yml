@@ -3,6 +3,7 @@ version: '3.0'
 services:
   etcd:
     image: 'bitnami/etcd:latest'
+    container_name: ycsb-etcd
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
     ports:
