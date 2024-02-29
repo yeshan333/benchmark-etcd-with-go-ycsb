@@ -1,0 +1,31 @@
+# scene ref: https://etcd.io/docs/v3.5/benchmarks/etcd-3-demo-benchmarks/#reading-one-single-key
+# etcd 官方给的场景 reading one single key
+
+# 单条 key-value 数据
+recordcount=1
+
+# benchmark 总共的操作次数
+operationcount=6000
+workload=core
+
+; threadcount=1
+# 控制 OPS 为 2000
+target=2000
+
+
+fieldcount=1
+fieldlength=200
+# 控制 etcd 的 key 大小在 256 字节
+keyprefix=__3MKdVjJjpfz0tzfHtL4ycTztGas4lWVLJIlVNT8HjtWf6Picj3WYC3KE76nVNkdnvCv1gMiMO7PZUUkmlBODEkJDZTVqtpQbqJ5pNUnz3oEuNoieOTpvrvAVTgJ7myi3Z0ns5Y3TYk05gzmmPINKsP3zcpN1hY5eITitMz8SSxNGv0KKHDKhH370U9QOLhMI4bsClkSbvCWgQ98LiLIhfZukqlFVZPp__
+
+readallfields=true
+writeallfields=true
+# 全部为读操作
+readproportion=1
+updateproportion=0
+scanproportion=0
+insertproportion=0
+
+dataintegrity=false
+# 顺序访问
+requestdistribution=sequential
