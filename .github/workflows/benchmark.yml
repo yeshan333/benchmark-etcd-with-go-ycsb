@@ -35,6 +35,10 @@ jobs:
         run: |
           bin/go-ycsb load etcd -P workloads/etcd_offcial_workload
 
+      - name: Peek etcd keys
+        run: |
+          etcdctl get --prefix ""
+
       - name: Running test
         run: |
           bin/go-ycsb run etcd -P workloads/etcd_offcial_workload

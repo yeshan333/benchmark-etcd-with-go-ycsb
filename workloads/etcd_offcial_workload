@@ -10,7 +10,7 @@ workload=core
 
 ; threadcount=1
 # 控制 OPS 为 2000
-target=2000
+; target=2000
 
 
 fieldcount=1
