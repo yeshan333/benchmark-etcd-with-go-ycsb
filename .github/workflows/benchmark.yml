@@ -12,18 +12,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository main branch
+      - name: Checkout Repository branch
         uses: actions/checkout@v3
 
-      - name: Checkout Repository main branch
+      - name: Start up etcd
         uses: isbang/compose-action@v1.5.1
         with:
           compose-file: "./docker-compose.yml"
 
-      - name: load test data
+      - name: Load test data
         run: |
-          ./bin/go-ycsb load etcd -P workloads/etcd_offcial_workload
+          bin/go-ycsb load etcd -P workloads/etcd_offcial_workload
 
-      - name: running test
+      - name: Running test
         run: |
-          ./bin/go-ycsb run etcd -P workloads/etcd_offcial_workload
+          bin/go-ycsb run etcd -P workloads/etcd_offcial_workload
