@@ -1,6 +1,8 @@
 
 # using go-ycsb to benchmark etcd.
 
+![banner](banner.png)
+
 ## Requirements
 
 - [go-ycsb](https://github.com/pingcap/go-ycsb)
