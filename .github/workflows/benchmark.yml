@@ -20,6 +20,11 @@ jobs:
         with:
           compose-file: "./docker-compose.yml"
 
+      - name: Peek CPU cores & Memory size
+        run: |
+          free -mh
+          lscpu | grep 'CPU(s):'
+
       - name: download go-ycsb
         run: |
           cd bin
