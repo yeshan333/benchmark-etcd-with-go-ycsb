@@ -20,6 +20,10 @@ jobs:
         with:
           compose-file: "./docker-compose.yml"
 
+      - name: download go-ycsb
+        run: |
+          wget -c https://github.com/pingcap/go-ycsb/releases/latest/download/go-ycsb-linux-amd64.tar.gz -O - | tar -xz -C bin
+
       - name: Load test data
         run: |
           bin/go-ycsb load etcd -P workloads/etcd_offcial_workload
