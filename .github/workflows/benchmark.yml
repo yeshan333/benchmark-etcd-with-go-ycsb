@@ -22,7 +22,9 @@ jobs:
 
       - name: download go-ycsb
         run: |
-          wget -c https://github.com/pingcap/go-ycsb/releases/latest/download/go-ycsb-linux-amd64.tar.gz -O - | tar -xz -C bin
+          cd bin
+          wget -c https://github.com/pingcap/go-ycsb/releases/latest/download/go-ycsb-linux-amd64.tar.gz -O - | tar -xz
+          cd ..
 
       - name: Load test data
         run: |
